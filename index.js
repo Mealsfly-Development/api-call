@@ -14,6 +14,7 @@ app.post('/forward-lead', async (req, res) => {
       req.body,
       { headers: { 'Content-Type': 'application/json' } }
     );
+    console.log("New lead from Google Apps Script:", JSON.stringify(req.body, null, 2));
     res.json(response.data);
   } catch (error) {
     console.error("Proxy Error:", error.message);
